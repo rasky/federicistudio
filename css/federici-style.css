@@ -1,0 +1,182 @@
+body {
+	background-image:url(../images/blackboard.jpg);
+	background-color:#000000;
+	color:#FFFFFF;
+	font-family:Verdana;
+	padding:0;
+	margin:0;
+	text-align:center;
+}
+.intro {
+	background-image:url(../images/sfondo_grigio.jpg);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position:right bottom;
+	color:#FFFFFF;
+	background-color:#434945;
+}
+.intro_bianca {
+	background-image:url(../images/sfondo_bianco.jpg);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-position:right bottom;
+	color:#000000;
+	background-color:#ffffff;
+	margin:0.5em;
+	padding:0.5em;
+	text-align:left;
+}
+img {
+	border:none;
+	color:#000000;
+}
+a {
+	color:#186bad;
+}
+a:hover {
+	color:#e40582;
+}
+#tt {
+	position:absolute;
+	display:block;
+	z-index:200;
+	/*background:url(../images/tt/tt_left.gif) top left no-repeat;*/
+	background:url(../images/tt/tt_left.gif) top left no-repeat;
+}
+#tttop {
+	display:block;
+	height:5px;
+	margin-left:5px;
+	z-index:200;
+	background:url(../images/tt/tt_top.gif) top right no-repeat;
+	overflow:hidden
+}
+#ttcont {
+	display:block;
+	padding:2px 12px 3px 7px;
+	margin-left:5px;
+	z-index:200;
+	background:#434945;
+	color:#FFFfff
+}
+#ttbot {
+	display:block;
+	height:5px;
+	z-index:200;
+	margin-left:5px;
+	background:url(../images/tt/tt_bottom.gif) top right no-repeat;
+	overflow:hidden
+}
+.centerme {
+	/*border: 1px dashed #CCCCCC;*/
+	width: 800px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -400px;
+	margin-top: -100px;
+}
+.centerme_disegno {
+	/*border: 1px dashed #CCCCCC;*/
+	width: 990px;
+	height: 610px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -495px;
+	margin-top: -310px;
+	overflow:hidden;
+}
+.disegno {
+	/*background-image:url(../images/base.png);*/
+	color:#000000;
+	display:none;
+	position:absolute;
+	left:-75px;
+	top:-15px;
+	z-index:2;
+}
+.descrizione {
+	list-style:none;
+	position:relative;
+	right:5px;
+	display:none;
+	width:400px;
+	padding:0.5em;
+	text-align:left;
+	color:#ffffff;
+	/*background-color:#FFFFFF;*/
+	background-image:url(../images/empty.png);
+	border:2px solid #434945;
+	z-index:300;
+	margin-bottom:0.25em;
+}
+.descrizione h4 {
+	font-variant:small-caps;
+	padding:0;
+	display:inline;
+}
+.descrizione img {
+	position:absolute;
+	right:3px;
+	top:3px;
+}
+#sortable {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#header {
+position:absolute;
+top:0.5em;
+left:0.5em;
+z-index:1000;
+text-align:left;
+}
+#footer {
+	text-align:left;
+	position:absolute;
+	bottom:1em;
+	left:1em;
+	height:1.5em;
+	vertical-align:middle;
+	font-weight:bold;
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	z-index:1000;
+	display:none;
+}
+#lista_servizi {
+	display:inline-block;
+}
+#lista_servizi li {
+	list-style:none;
+	background-image:url(../images/federici_precise_thin.png);
+	background-position:left center;
+	background-repeat:no-repeat;
+	height:32px;
+	padding-left:32px;
+	padding-top:3em;
+	padding-bottom:32px;	
+	margin-bottom:-5em;
+}
+#centro {
+	/*width:33%;*/
+	display:inline-block;
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;	
+	font-variant:small-caps; 
+	font-size:x-large;
+}
+#codici {
+	margin-left:auto;
+	margin-right:auto;		
+	/*margin-left:2em;*/
+	text-align:left;
+	font-size:small;
+	/*width:40%;*/
+	display:inline-block;
+}

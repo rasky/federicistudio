@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+
+<title>Federici studio e ristrutturazioni srl - Roma</title>
+<meta name="description" content="Federici Studio SRL - Progettazione, ristrutturazioni, impiantistica, consulenza e soluzioni per l'edilizia. Via Casilina 977 Roma" />
+<meta name="keywords" content="balconi, pavimenti, pareti, cucine, luci, televisione, giardini, tende da sole, impianti fotovoltaici, condizionatori, scale, facciate, cancelli, bagni, gazebo, irrigazione, progettazione, ristrutturazioni, impiantistica, consulenza, soluzioni per l'edilizia" />
+<link href="css/federici-style.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="icona16x16.png"/>
+<script type="text/javascript" src="js/utils.js"></script>
+<script type="text/javascript" src="js/tooltip.js"></script>
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8rc3.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.core.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.widget.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.mouse.min.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo-min.js"></script>
+
+<!-- <script type="text/javascript" src="js/jquery.ui.sortable.min.js"></script> -->
+
+<script type="text/javascript">
+	$(function() {
+	
+		//$("#sortable").sortable();
+		//$("#sortable").disableSelection();
+		/*$(document).ready(function()
+		{
+			if (jQuery.browser.msie) 
+			$('img[src$=.png]').each(
+				function() 
+				{
+					this.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src="+this.src+",sizingMethod='scale')"; 
+				}
+			); 
+		});*/
+
+		function showjq(id)
+		{
+			var options = {};
+			$(id).show("blind",options,500,function(){$("#descrizioni").scrollTo($(id),800)});
+		};
+		function hidejq(id)
+		{
+			var options = {};
+			$(id).hide("blind",options,100,null);
+		};
+
+		$("img[name^='chiudi_']").click(
+			function()
+			{
+				if(!$(this+":parent").is(":animated"))
+				{
+					name=$(this).attr('name');
+					name = name.split("_")[1];
+					hidejq("#descrizione_"+name);
+				}
+				
+			}
+		);
+		$("area[name$='_map']").mouseenter(
+			function()
+			{
+				name=$(this).attr('name');
+				name = name.split("_")[0];
+				colore = $("#"+name).css('color');
+				$("#"+name).stop();
+				if(colore=="rgb(0, 0, 0)" || colore=="#000000")
+				{			
+					if (jQuery.browser.msie) 
+					{
+						//$("#"+name).css('background-image','url(../images/base.png)');
+						$("#"+name).css('display','block');
+					}
+					
+					else
+					{
+						$("#"+name).fadeTo('fast',1);
+					}
+					//$("#"+name).fadeTo('fast',1);
+					//$("#"+name).fadeIn(200);
+				}
+				if($("#"+name).attr('name').length>0)
+					tooltip.show($("#"+name).attr('name'));				
+			}
+		);
+		
+		$("area[name$='_map']").mouseleave(
+			function()
+			{
+				name=$(this).attr('name');
+				name = name.split("_")[0];
+				colore = $("#"+name).css('color');
+				if(colore=="rgb(0, 0, 0)" || colore=="#000000")
+				{			
+					$("#"+name).stop();
+					if (jQuery.browser.msie) 
+					{
+						$("#"+name).css('display','none');
+					}
+					else
+					{
+						//$("#"+name).fadeOut(200);
+						$("#"+name).fadeTo('fast',0);
+					}
+					//$("#"+name).fadeTo('fast',1);
+				}
+				tooltip.hide();
+			}
+		);
+		//$("img.disegno").click(function(){return false;});
+		$("area[name$='_map']").click(
+			function () 
+			{
+				name=$(this).attr('name');
+				name = name.split("_")[0];
+				colore = $("#"+name).css('color');
+				if(colore=="rgb(0, 0, 0)" || colore=="#000000" )
+				{
+					$("#"+name).css('color',"#FFFFFF");
+					if($("#"+name).attr('name').length>0)
+					{
+						$("#descrizioni").stop(true);
+						if($("#descrizione_"+name).css('display')=="none")
+						{
+							showjq("#descrizione_"+name);
+						}
+						else
+						{
+							$("#descrizioni").scrollTo($("#descrizione_"+name),800);
+						}
+					}
+					if (jQuery.browser.msie) 
+					{
+						$("#"+name).css('display','block');
+					}
+					else
+					{
+						$("#"+name).stop();
+						$("#"+name).fadeTo(100,1);
+					}
+					$("#counter").html(eval($("#counter").html())+1);
+					
+				}
+				else
+				{
+					$("#"+name).css('color',"#000000");
+					if (jQuery.browser.msie) 
+					{
+						$("#"+name).css('display',"none");
+					}
+					else
+					{
+						$("#"+name).stop();
+						$("#"+name).fadeTo(100,0);
+					}
+					
+					$("#counter").html(eval($("#counter").html())-1);
+				}
+			return false;
+    	});
+		
+	});
+	</script>
+<link href="css/blitzer/jquery-ui-1.8rc3.custom.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="header">
+<a href="index.html"><img src="images/federici_200.png" alt="Federici" name="logo" id="logo" style="width:64px;"/></a><br/>
+<a href="mailto:info@federicistudio.com" title="Scrivici!"> info@federicistudio.com</a>
+</div>
+<div id="casa" style="border:none; overflow:hidden;" class="centerme_disegno">
+  <img class="disegno" src="images/base.png" alt="base" name="base" border="0" usemap="#baseMap" id="base" style="z-index:1; display:block;"/>
+  <!-- 																														-->
+
+<img class="disegno" src="images/pavimentos.png" usemap="#baseMap" name="Pavimenti" id="pavimento" style="display:none; top:308px; left:188px;" alt=""/> 
+<img class="disegno" src="images/facciatas.png" usemap="#baseMap" name="Facciate" id="facciata" style="display:none; left:335px; top:312px;" alt=""/>
+<img class="disegno" src="images/finestras.png" usemap="#baseMap" name="Finestre" id="finestra" style="display:none; left:345px; top:346px;" alt=""/>
+<img class="disegno" src="images/cucinas.png" usemap="#baseMap" name="Cucine" id="cucina" style="display:none; left:205px; top:357px;" alt=""/> 
+<img class="disegno" src="images/portas.png" usemap="#baseMap" name="Porte" id="porta" style="display:none; left:435px; top:352px;" alt=""/> 
+<img class="disegno" src="images/lampadinas.png" usemap="#baseMap" name="Luci" id="luce" style="display:none; top:99px; left:290px;" alt=""/>
+<img class="disegno" src="images/caldaias.png" usemap="#baseMap" name="Caldaie" id="caldaia" style="display:none; top:13px; left:416px;" alt=""/> 
+<img class="disegno" src="images/termosifones.png" usemap="#baseMap" name="Termosifoni" id="termosifone" style="display:none; top:260px; left:386px;" alt=""/> 
+<img class="disegno" src="images/terrazzos.png" usemap="#baseMap" name="Terrazzi" id="terrazzo" style="display:none; left:115px; top:315px;" alt=""/>
+<img class="disegno" src="images/condizionatores.png" usemap="#baseMap" name="Condizionatori" id="condizionatore" style="display:none; top:195px; left:223px;" alt=""/> 
+<img class="disegno" src="images/bagnos.png" usemap="#baseMap" name="Bagni" id="bagno" style="display:none; top:238px; left:185px;" alt=""/> 
+<img class="disegno" src="images/pannellosolares.png" usemap="#baseMap" name="Pannelli Solari" id="pannello" style="display:none; top:126px; left:205px;" alt=""/> 
+<img class="disegno" src="images/tendedasoles.png" usemap="#baseMap" name="Tende da Sole" id="tende" style="display:none; left:130px; top:253px;" alt=""/>
+<img class="disegno" src="images/scales.png" usemap="#baseMap" name="Scale" id="scale" style="display:none; left:263px; top:296px;" alt=""/>
+<img class="disegno" src="images/giardinos.png" usemap="#baseMap" name="Giardini" id="giardino" style="display:none; left:-75px; top:97px;" alt=""/>
+<img class="disegno" src="images/cancellos.png" usemap="#baseMap" name="Cancelli" id="cancello" alt="" style="display:none; left:151px; top:478px;"/>
+<img class="disegno" src="images/gazebos.png" usemap="#baseMap" name="Gazebi" id="gazebo" alt="" style="display:none; top:312px; left:607px;"/>
+<img class="disegno" src="images/installatores.png" usemap="#baseMap" name="Federici" id="installatore" alt="" style="position:absolute; display:none; top:263px; left:868px;"/>
+<img class="disegno" src="images/paretis.png" usemap="#baseMap" name="Pareti" id="pareti" style="position:absolute; display:none; left:182px; top:214px;" alt=""/> 
+<img class="disegno" src="images/antennas.png" usemap="#baseMap" name="Antenna" id="antenna" style="position:absolute; display:none; left:172px; top:24px;" alt=""/> 
+<img class="disegno" src="images/tettos.png" usemap="#baseMap" name="Tetti" id="tetto" style="display:none; left:163px; top:88px;" alt=""/>
+<img class="disegno" src="images/empty.png" usemap="#baseMap" id="empty" style="position:absolute; display:block; z-index:100;" alt=""/>
+
+<!-- Contatore -->
+
+  <map name="baseMap" id="baseMap">
+    <area shape="rect" coords="262,486,325,610" name="cancello_map"/>
+    <area shape="rect" coords="680,328,816,420" name="gazebo_map" />
+    <area shape="rect" coords="274,340,340,426" name="cucina_map"/>
+    <area shape="rect" coords="511,365,548,426" name="porta_map"/>
+    <area shape="rect" coords="422,361,488,402" name="finestra_map" />
+    <area shape="rect" coords="480,289,512,324" name="termosifone_map" />
+    <area shape="circle" coords="423,233,25" name="luce_map" />
+    <area shape="rect" coords="310,208,378,245" name="condizionatore_map" />
+    <area shape="rect" coords="311,48,400,105" name="antenna_map" />
+    <area shape="rect" coords="364,67,375,144" name="antenna_map" />
+    <area shape="rect" coords="511,243,546,314" name="caldaia_map" />
+    <area shape="rect" coords="494,143,543,178" name="caldaia_map" />
+    <area shape="rect" coords="267,260,324,327" name="bagno_map"/>
+    <area shape="rect" coords="190,330,260,360" name="terrazzo_map" />
+    <area shape="rect" coords="201,266,260,324" name="tende_map" />
+    <area shape="rect" coords="258,424,568,445" name="pavimento_map" />
+    <area shape="rect" coords="266,325,553,340" name="pavimento_map" />
+    <area shape="rect" coords="258,244,269,430" name="pareti_map" />
+    <area shape="rect" coords="546,239,567,428" name="pareti_map"  />
+    <area shape="rect" coords="322,258,331,327" name="pareti_map"/>
+    <area shape="rect" coords="566,418,950,434" name="giardino_map" />
+    <area shape="rect" coords="139,416,258,434" name="giardino_map" />
+    <area shape="rect" coords="600,376,634,420" name="giardino_map" />
+    <area shape="rect" coords="839,299,935,420" name="giardino_map" />
+    <area shape="circle" coords="846,209,99" name="giardino_map" />
+    <area shape="poly" coords="233,262,242,269,412,122,571,267,580,255,417,105,336,179,284,224" name="tetto_map" />
+    <area shape="poly" coords="279,211,356,147,351,133,275,190" name="pannello_map"/>
+    <area shape="poly" coords="564,424,556,325,443,329,417,364,484,359,489,402,422,403,422,424,504,421,510,367,549,368,552,424" name="facciata_map"/>
+    <area shape="poly" coords="366,427,447,321,417,324,338,429" name="scale_map"/>
+    <area shape="rect" coords="64,344,141,434" name="giardino_map" />
+    <area shape="rect" coords="948,278,1070,434" name="installatore_map" />
+  </map>
+
+<div style="position:absolute; bottom:45px; left:137px; z-index:900; width: 47px;">
+  <p><span id="counter">0</span>/21</p>
+</div>
+<div id="descrizioni" style="text-align:right; position:absolute; left:478px; top:453px; width:504px; height:157px; overflow-y:scroll; overflow:-x:hidden; z-index:200;">
+<ul id="sortable" style="position:absolute; top:1em; right:1em;">
+  <li id="descrizione_installatore" class="descrizione" style="height:70px; text-align:center"> <!--<img src="images/close.png" name="chiudi_installatore" />-->
+ <p style="top:-4px; position:absolute; margin-right:10px; text-align:left;"> <img src="images/federici_precise.png" alt="FEDERICI STUDIO" style="position:relative; float:left;"/>Grazie per aver costruito la tua casa!<br />Contattaci a <a href="mailto:info@federicistudio.com" title="Scrivici!">info@federicistudio.com</a> per preventivi gratuiti e senza impegno.</p>
+  </li>
+  <li id="descrizione_antenna" class="descrizione"> <img src="images/close.png" name="chiudi_antenna" />
+      <h4>Antenne</h4>
+      <p>installazione antenne, impianti condominiali TV satellitari </p>
+  </li>
+  <li id="descrizione_bagno" class="descrizione"> <img src="images/close.png" name="chiudi_bagno" />
+    <h4>Bagni</h4>
+    <p>impianti idraulici, sostituzioni: rubinetti, scalda-acqua elettrici, piccole manutenzioni, impianti di aumento pressione acqua con pompe ad inverter  sostituzione vasche  e sanitari montaggio idromassaggio</p>
+  </li>
+  <li id="descrizione_caldaia" class="descrizione"> <img src="images/close.png" name="chiudi_caldaia" />
+      <h4>Caldaie</h4>
+      <p> installazioni sostituzioni a condensazione con risparmio energetico, impianti con termo solari, manutenzione</p>
+  </li>
+  <li id="descrizione_cancello" class="descrizione"> <img src="images/close.png" name="chiudi_cancello" />
+      <h4>Cancelli</h4>
+      <p>progettazione e posa in opera di cancelli con ampia scelta cancelli artigianali</p>
+  </li>
+
+  <li id="descrizione_condizionatore" class="descrizione"> <img src="images/close.png" name="chiudi_condizionatore" />
+      <h4>Condizionatori</h4>
+      <p>progettazione impianti installazione con messa a vuoto dell’impianto, ricariche, controlli periodici e pulizia dei scambiatori. Aspirazioni per ricambi aria locali con canalizzazioni
+</p>
+  </li>
+  <li id="descrizione_cucina" class="descrizione"> <img src="images/close.png" name="chiudi_cucina" />
+    <div>
+      <h4>Cucine</h4>
+      <p>messa in opera di impianto gas  chiusura automatica Gas con valvola rilevamento fughe</p>
+    </div>
+  </li>
+  <li id="descrizione_facciata" class="descrizione"> <img src="images/close.png" name="chiudi_facciata" />
+      <h4>Facciate</h4>
+      <p>ristrutturazione, rivestimento a cappotto con lastre in EPS, Lana di roccia o di sughero </p>
+  </li>
+  <li id="descrizione_finestra" class="descrizione"> <img src="images/close.png" name="chiudi_finestra" />
+      <h4>Finestre</h4>
+      <p>progettazione e aperture nuove finestre, sostituzione infissi,accessori, zanzariere, grate</p>
+  </li>
+   <li id="descrizione_gazebo" class="descrizione"> <img src="images/close.png" name="chiudi_gazebo" />
+      <h4>Gazebi</h4>
+      <p>progettazione e costruzione</p>
+  </li>
+   <li id="descrizione_giardino" class="descrizione"> <img src="images/close.png" name="chiudi_giardino" />
+      <h4>Giardini</h4>
+      <p>impianti irrigazione, illuminazione </p>
+  </li>
+  <li class="descrizione" id="descrizione_luce" > <img src="images/close.png" name="chiudi_luce" />
+    <h4>Luci</h4>
+    <p>impianti elettrici, citofonici, installazione di riarmo automatico interruttore generale</p>
+  </li>
+  <li id="descrizione_pannello" class="descrizione"> <img src="images/close.png" name="chiudi_pannello" />
+      <h4>Pannelli Solari</h4>
+      <p>energia alternativa a risparmio energetico</p>
+  </li>
+  <li class="descrizione" id="descrizione_pareti" > <img src="images/close.png" name="chiudi_pareti" />
+    <h4>Pareti</h4>
+    <p>costruzioni cartongessi e laterizi tradizionali. Tinteggiature personalizzate, Stucchi, Carte da Parati</p>
+  </li>
+  <li id="descrizione_pavimento" class="descrizione"> <img src="images/close.png" name="chiudi_pavimento" />
+      <h4>Pavimenti</h4>
+      <p>applicazioni anche senza demolizione con minimi spessori: Resine, Lampalquet, laminati, masselli prefiniti, acciaio, acciaio inox. Materiali innovativi. Posa Marmi e arrodatura e lucidatura (con artigiani specializzati)</p>
+  </li>
+  <li id="descrizione_porta" class="descrizione"> <img src="images/close.png" name="chiudi_porta" />
+      <h4>Porte</h4>
+      <p> portoncini, porte blindate, porte scorrevoli</p>
+  </li>
+  <li id="descrizione_scale" class="descrizione"> <img src="images/close.png" name="chiudi_scale" />
+      <h4>Scale</h4>
+      <p>ristrutturazione completa interni condominiali realizzazione scale </p>
+  </li>
+  <li id="descrizione_termosifone" class="descrizione"> <img src="images/close.png" name="chiudi_termosifone" />
+      <h4>Termosifoni</h4>
+      <p>impianti riscaldamento, sostituzione elementi radianti, installazioni di valvole termostatiche</p>
+  </li>
+  <li id="descrizione_tetto" class="descrizione"> <img src="images/close.png" name="chiudi_tetto"/>
+    <h4>Tetti</h4>
+    <p>impermeabilizzazione isolamento termico PIANO CASA, 
+         ristrutturazioni tetti in legno nuove realizzazioni</p>
+  </li>
+  <li id="descrizione_tende" class="descrizione"> <img src="images/close.png" name="chiudi_tende" />
+      <h4>Tende da sole</h4>
+      <p>posa in opera</p>
+  </li>
+  <li id="descrizione_terrazzo" class="descrizione"> <img src="images/close.png" name="chiudi_terrazzo" />
+      <h4>Terrazzi</h4>
+      <p>impermeabilizzazione, coibentazioni per raggiungere ottimizzazione energetica , progettazione arredamento con impianto irrigazione automatico</p>
+  </li>
+
+
+</ul>
+</div>
+</div>
+
+<div id="footer">
+FEDERICI studio e ristrutturazioni - Roma - P.I./C.F.: 10829281004
+REA: RM-1257956 di Roma
+Capitale Sociale: €10.000 (int.versato)</div>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3969335-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

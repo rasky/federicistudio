@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Federici studio e ristrutturazioni srl - Roma</title>
+<meta name="description" content="Federici Studio SRL - Progettazione ristrutturazioni impiantistica consulenza e soluzioni per l'edilizia. Via Casilina 977 Roma" />
+<meta name="keywords" content="progettazione, ristrutturazioni, impiantistica, consulenza, soluzioni per l'edilizia" />
+<link rel="shortcut icon" href="icona16x16.png"/>
+<link href="css/federici-style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/tooltip.js"></script>
+<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8rc3.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.ui.core.min.js"></script>
+<script type="text/javascript">
+$(function() 
+{
+$("#logocentrale").fadeTo(0,0);
+	$("#logocentrale").mouseenter(function(){
+		$(this).stop();
+		if (jQuery.browser.msie)
+		{
+			$(this).parent().parent().parent().css("background-image","url(images/federici_intro_active.png)");
+			$(this).parent().parent().parent().css("background-repeat","no-repeat");
+			$(this).parent().parent().parent().css("background-position","top center");
+		}
+		else
+			$(this).fadeTo("slow",1);
+		});
+	$("#logocentrale").mouseleave(function(){
+		$(this).stop();
+		if (jQuery.browser.msie)
+		{
+			$(this).parent().parent().parent().css("background-image","url(images/federici_intro.png)");
+		}
+		else
+			$(this).fadeTo("slow",0);
+		});	
+});
+</script>
+</head>
+<body class="intro_bianca">
+<div id="headerintro"> <span><img src="images/federici_260_thin.png" alt="F" style="vertical-align:middle; width:140px;"/>&nbsp;&nbsp;<img src="images/titolo_intro.png" alt="Federici SRL - Studio e ristrutturazioni" style="vertical-align:middle; width:400px;"  /></span> </div>
+<table style=" width:100%;">
+  <tr style="vertical-align:top;">
+    <td style=" width:33%;"><div id="lista_servizi">
+        <ul>
+          <li>Progettazione</li>
+          <li>Ristrutturazioni</li>
+          <li>Impiantistica</li>
+          <li>Consulenza</li>
+          <li>Soluzioni per l'edilizia</li>
+        </ul>
+      </div></td>
+    <td  style=" width:33%; vertical-align:middle; text-align:center;"><div style="background-image:url(images/federici_intro.png); background-repeat:no-repeat; background-position:top center; "><a href="scopri.html"><img src="images/federici_intro_active.png" alt="F" name="logocentrale" border="0" id="logocentrale"/></a></div>
+      <br/>
+      ALL IN ONE</td>
+    <td style=" width:33%; text-align:left; font-size:small;text-align:-moz-center;!text-align:center;" ><div id="codici">
+        <h1 style="font-size:14px; color:#186bad">Federici studio e ristrutturazioni srl</h1>
+        <ul style="list-style:none;">
+          <li style="list-style-image:url(images/home.png); margin-bottom:0.5em;"> Via Casilina 977 - 00172 Roma Italy</li>
+          <li style="list-style-image:url(images/faxphone.png); margin-bottom:0.5em;"> Tel/Fax: +39 0623484745</li>
+          <li style="list-style-image:url(images/mail.png); margin-bottom:0.5em;"> e-mail: <a href="mailto:info@federicistudio.com">info@federicistudio.com</a></li>
+          <li style="list-style-image:url(images/info.png); margin-bottom:0.5em;"> PEC: <a href="mailto:federicistudio@legalmail.it">federicistudio@legalmail.it</a><br/>
+            P.I./C.F.: 10829281004<br/>
+            REA: RM-1257956 di Roma<br/>
+            Capitale Sociale: &euro;10.000 <span style="font-size:x-small;">(int.versato)</span></li>
+        </ul>
+      </div></td>
+  </tr>
+</table>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3969335-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>
